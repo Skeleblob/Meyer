@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://db6prsm12a728"]
+
+[ext_resource type="Script" uid="uid://d2dx01gmhg4fp" path="res://meyer_game.gd" id="1_fqdkc"]
+[ext_resource type="Script" uid="uid://brl3r1ipy106x" path="res://button.gd" id="2_3aavc"]
+[ext_resource type="Script" uid="uid://db3gygajviw30" path="res://die.gd" id="3_eprlm"]
+
+[node name="MeyerGame" type="Node2D" unique_id=1502122109]
+script = ExtResource("1_fqdkc")
+
+[node name="Button" type="Button" parent="." unique_id=1111643978]
+offset_left = 452.0
+offset_top = 399.0
+offset_right = 636.0
+offset_bottom = 596.0
+text = "Press to roll dies!!!"
+script = ExtResource("2_3aavc")
+
+[node name="Die1" type="Node2D" parent="." unique_id=335352475]
+script = ExtResource("3_eprlm")
+
+[node name="Die2" type="Node2D" parent="." unique_id=224261473]
+script = ExtResource("3_eprlm")
+
+[connection signal="pressed" from="Button" to="Die1" method="_on_button_pressed"]
