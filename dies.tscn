@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cn7akfk5f25uo"]
+
+[ext_resource type="Script" uid="uid://caa4gpe4hibnp" path="res://dies.gd" id="1_e6jti"]
+
+[node name="Dies" type="Node2D" unique_id=2024701353]
+script = ExtResource("1_e6jti")
+
+[node name="Button" type="Button" parent="." unique_id=678202768]
+offset_left = 429.0
+offset_top = 419.0
+offset_right = 740.0
+offset_bottom = 598.0
+text = "Press to roll dies!!!!"
