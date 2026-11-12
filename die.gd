@@ -24,6 +24,18 @@ func _on_button_pressed() -> void:
 
 	if value_1 == value_2:
 		result_label.text = "Du slog to ens!\nBegge terninger viser: %d" % value_1
+	
+	elif lowest == 1 and highest == 3:
+		result_label.text = "Du slog lille Meyer!\n %d  %d" % [
+			lowest,
+			highest
+		]
+	elif lowest == 1 and highest == 2:
+		result_label.text = "Du slog Meyer!\n %d  %d" % [
+			lowest,
+			highest
+		]
+		
 	else:
 		result_label.text = "Højeste terning: %d\nLaveste terning: %d" % [
 			highest,
