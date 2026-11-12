@@ -41,7 +41,7 @@ func _on_button_pressed() -> void:
 			lowest
 		]	
 	elif highest == 3 and lowest == 2:	
-		result_label.text = "Du slog fem-og-tres!\n %d %d" % [
+		result_label.text = "Du slog fællesskål!\n %d %d" % [
 			highest,
 			lowest
 		]

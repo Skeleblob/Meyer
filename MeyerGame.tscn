@@ -231,7 +231,7 @@ offset_left = 246.0
 offset_top = 430.0
 offset_right = 430.0
 offset_bottom = 627.0
-text = "Press to roll dies!!!"
+text = "Tryk for at rulle terninger!!!"
 script = ExtResource("2_3aavc")
 
 [node name="Die1" type="Node2D" parent="." unique_id=335352475]
