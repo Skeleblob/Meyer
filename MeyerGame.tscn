@@ -241,6 +241,7 @@ script = ExtResource("3_eprlm")
 script = ExtResource("3_eprlm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=73574586]
+visible = false
 position = Vector2(536, 214)
 scale = Vector2(1.3354167, 1.3843284)
 sprite_frames = SubResource("SpriteFrames_om7lw")
