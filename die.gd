@@ -35,7 +35,17 @@ func _on_button_pressed() -> void:
 			lowest,
 			highest
 		]
-		
+	elif highest == 6 and lowest == 5:
+		result_label.text = "Du slog fem-og-tres!\n %d %d" % [
+			highest,
+			lowest
+		]	
+	elif highest == 3 and lowest == 2:	
+		result_label.text = "Du slog fem-og-tres!\n %d %d" % [
+			highest,
+			lowest
+		]
+	
 	else:
 		result_label.text = "Højeste terning: %d\nLaveste terning: %d" % [
 			highest,
