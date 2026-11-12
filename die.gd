@@ -3,6 +3,8 @@ extends Node2D
 var value_1: int
 var value_2: int
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var result_label: Label = $"../ResultLabel"
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,8 +22,15 @@ func _on_button_pressed() -> void:
 	var highest = max(value_1, value_2)
 	var lowest = min(value_1, value_2)
 
-	
-	print(highest, " ", lowest)
+	if value_1 == value_2:
+		result_label.text = "Du slog to ens!\nBegge terninger viser: %d" % value_1
+	else:
+		result_label.text = "Højeste terning: %d\nLaveste terning: %d" % [
+			highest,
+		 	lowest
+	]
+		
+	print(highest, "", lowest)
 	
 	
 func _on_animated_sprite_2d_animation_finished() -> void:

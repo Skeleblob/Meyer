@@ -227,10 +227,10 @@ animations = [{
 script = ExtResource("1_fqdkc")
 
 [node name="Button" type="Button" parent="." unique_id=1111643978]
-offset_left = 469.0
-offset_top = 428.0
-offset_right = 653.0
-offset_bottom = 625.0
+offset_left = 246.0
+offset_top = 430.0
+offset_right = 430.0
+offset_bottom = 627.0
 text = "Press to roll dies!!!"
 script = ExtResource("2_3aavc")
 
@@ -241,10 +241,15 @@ script = ExtResource("3_eprlm")
 script = ExtResource("3_eprlm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=73574586]
-visible = false
 position = Vector2(536, 214)
 scale = Vector2(1.3354167, 1.3843284)
 sprite_frames = SubResource("SpriteFrames_om7lw")
+
+[node name="ResultLabel" type="Label" parent="." unique_id=1575989077]
+offset_left = 561.0
+offset_top = 445.0
+offset_right = 840.0
+offset_bottom = 619.0
 
 [connection signal="pressed" from="Button" to="Die1" method="_on_button_pressed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="Die1" method="_on_animated_sprite_2d_animation_finished"]
