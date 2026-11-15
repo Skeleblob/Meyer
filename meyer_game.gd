@@ -66,17 +66,35 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_button_2_pressed() -> void:
 	if hasRolled==true:
-		result_label.text += "\ndu har rulet"
+		result_label.text += "\ndu har rullet"
 	elif statement==21:
 		result_label.text += "\ndu er først"
+	else:
+		if currentRoll==statement:
+			result_label.text = "\nWOMP WOMP!"
+		else:
+			result_label.text = "\nGOT EM!"
 
 
 func _on_button_3_pressed() -> void:
-	if currentRoll <= currentToBeat:
+	if currentRoll <= currentToBeat and hasRolled==true:
 		statement=currentRoll
 		hasRolled=false
+		if statement==rolls.find(21):
+			result_label.text = "\nder blev rullet meier!"
+		elif statement==rolls.find(31):
+			result_label.text = "\nder blev rullet lille meier!"
+		elif statement<=rolls.find(11):
+			result_label.text = "\nder blev rullet dobbelt "+str(rolls[statement]/11)+"!"
+		elif statement<=rolls.find(41):
+			result_label.text = "\nder blev rullet "+str(rolls[statement])+"!"
+		else:
+			result_label.text = "\nder blev rullet fællesskål!"
 	else:
-		result_label.text += "\ndu rulede for lavt"
+		if hasRolled==false:
+			result_label.text += "\ndu har ikke rullet"
+		else:
+			result_label.text += "\ndu rullede for lavt"
 
 
 func _on_button_4_pressed() -> void:
