@@ -277,6 +277,34 @@ offset_bottom = 530.0
 text = "speak lies!!!"
 script = ExtResource("2_3aavc")
 
+[node name="LineEdit" type="LineEdit" parent="Button4" unique_id=134950922]
+visible = false
+layout_mode = 0
+offset_top = -88.0
+offset_right = 184.0
+offset_bottom = -5.0
+placeholder_text = "intast løgn >:D"
+
+[node name="CheckBox" type="CheckBox" parent="Button4" unique_id=1105662878]
+visible = false
+layout_mode = 1
+offset_top = -88.0
+offset_right = 127.0
+offset_bottom = -57.0
+text = "eller derover"
+
+[node name="whooseTurn" type="Label" parent="." unique_id=1730621380]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="p1hp" type="Label" parent="." unique_id=5028410]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="p2hp" type="Label" parent="." unique_id=41895964]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="Die1" method="_on_button_pressed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
@@ -284,3 +312,5 @@ script = ExtResource("2_3aavc")
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="text_submitted" from="Button4/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="toggled" from="Button4/CheckBox" to="." method="_on_check_box_toggled"]
