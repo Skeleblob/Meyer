@@ -223,6 +223,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_3aavc"]
+font_size = 48
+
 [node name="MeyerGame" type="Node2D" unique_id=1502122109]
 script = ExtResource("1_fqdkc")
 
@@ -231,9 +234,7 @@ offset_left = 246.0
 offset_top = 430.0
 offset_right = 430.0
 offset_bottom = 627.0
-
 text = "Press to roll dice!!!"
-
 script = ExtResource("2_3aavc")
 
 [node name="Die1" type="Node2D" parent="." unique_id=335352475]
@@ -297,14 +298,26 @@ text = "eller derover"
 [node name="whooseTurn" type="Label" parent="." unique_id=1730621380]
 offset_right = 40.0
 offset_bottom = 23.0
+text = "text"
 
 [node name="p1hp" type="Label" parent="." unique_id=5028410]
+offset_top = 21.0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 44.0
+text = "text"
 
 [node name="p2hp" type="Label" parent="." unique_id=41895964]
+offset_top = 42.0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 65.0
+text = "text"
+
+[node name="victory" type="Label" parent="." unique_id=1880182284]
+offset_right = 1155.0
+offset_bottom = 643.0
+label_settings = SubResource("LabelSettings_3aavc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="Die1" method="_on_button_pressed"]

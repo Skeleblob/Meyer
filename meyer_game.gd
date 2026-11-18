@@ -11,14 +11,37 @@ var hasRolled = false
 var viable = false
 var ellerDerover = false
 var statementTxt
+var p1turn = true
+var p1hp = 6
+var p2hp = 6
+var round = 1
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+func _process(delta: float) -> void:
+	if p1turn == true:
+		$whooseTurn.text="turn: player 1"
+	else:
+		$whooseTurn.text="turn: player 2"
+	$p1hp.text="player 1 hp: "+str(p1hp)
+	$p2hp.text="player 2 hp: "+str(p2hp)
+	if p1hp>0:
+		$victory.text=""
+	else:
+		$victory.text="PLAYER 1 IS FUCKING HORRIBLE AT VIDEOGAMES\n AND SHOULD UNINSTALL"
+		p1turn = true
+	if p2hp>0:
+		$victory.text=""
+	else:
+		$victory.text="PLAYER 2 IS FUCKING HORRIBLE AT VIDEOGAMES\n AND SHOULD UNINSTALL"
+		p1turn = true
 
 
 func _on_button_pressed() -> void:
 	if hasRolled==false:
+		if p1hp==0 or p2hp==0:
+			p1hp = 6
+			p2hp = 6
+			round = 1
 		hasRolled=true
 		ellerDerover=false
 		animated_sprite_2d.show()
@@ -94,22 +117,37 @@ func _on_button_2_pressed() -> void:
 		if !ellerDerover:
 			if currentRoll==statement:
 				result_label.text = "\nWOMP WOMP! YOU LOSE!"
-				currentRoll = rolls.size()
-				statement = rolls.size()
+				if p1turn == true:
+					p1hp-=1
+				else:
+					p2hp-=1
 			else:
 				result_label.text = "\nGOT EM! YOU WIN!"
-				currentRoll = rolls.size()
-				statement = rolls.size()
+				if p1turn == false:
+					p1hp-=1
+				else:
+					p2hp-=1
 		else:
 			ellerDerover=false
 			if currentRoll<=statement:
 				result_label.text = "\nWOMP WOMP! YOU LOSE!"
-				currentRoll = rolls.size()
-				statement = rolls.size()
+				if p1turn == true:
+					p1hp-=1
+				else:
+					p2hp-=1
 			else:
 				result_label.text = "\nGOT EM! YOU WIN!"
-				currentRoll = rolls.size()
-				statement = rolls.size()
+				if p1turn == false:
+					p1hp-=1
+				else:
+					p2hp-=1
+		currentRoll = rolls.size()
+		statement = rolls.size()
+		round+=1
+		if round%2==0:
+			p1turn = false
+		else:
+			p1turn = true
 
 
 func _on_button_3_pressed() -> void:
@@ -167,6 +205,10 @@ func makeStatement():
 	if ellerDerover:
 		statementTxt+=" (eller derover...)"
 	result_label.text = statementTxt
+	if p1turn:
+		p1turn=false
+	else:
+		p1turn=true
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	if toggled_on:
