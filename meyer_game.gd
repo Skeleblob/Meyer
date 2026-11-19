@@ -80,8 +80,6 @@ func _on_button_pressed() -> void:
 				highest,
 			 	lowest
 		]
-		
-		print(highest, "", lowest)
 	else:
 		hasRolled=false
 		ellerDerover=true
@@ -166,6 +164,8 @@ func _on_button_4_pressed() -> void:
 	if hasRolled==false:
 			result_label.text += "\ndu har ikke rullet"
 	else:
+		if $Button4/LineEdit.visible:
+			result_label.text += "\ntryk enter på tekstboksen"
 		$Button4/LineEdit.show()
 		$Button4/CheckBox.show()
 
